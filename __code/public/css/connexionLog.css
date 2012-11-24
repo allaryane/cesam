@@ -1,0 +1,28 @@
+/* 
+    Document   : connexionLog
+    Created on : 2012-11-22, 20:57:58
+    Author     : allaryane
+    Description:
+        Purpose of the stylesheet follows.
+*/
+
+.connexionLogClass { 
+    margin-left: 15%;
+    margin-right: 15%;
+    color: graytext;
+}
+
+.connexionLogClass hr{
+    margin-top: 0px;
+}
+
+.connexionLogClass label{
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+
+.divErrorNoData{
+    margin-top: 50px;
+    font-size: 18px;
+}

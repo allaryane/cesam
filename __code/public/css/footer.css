@@ -1,0 +1,62 @@
+/* 
+    Document   : footer.css
+    Created on : 1 sept. 2012, 16:33:52
+    Author     : Ryane Alla
+*/
+
+.row-fluid footer{
+	padding-top: 5px;
+	background-color: white;
+}
+
+
+.hrFooter{
+	color: #737373;
+}
+
+.beforeHr{
+	margin-top: 5px;
+	height: 16px;
+	margin-bottom: 10px;
+}
+
+.beforeHr span{
+	margin-left: 0px;
+	margin-right: 10px;
+}
+
+.beforeHr span a{
+	margin-left: 0px;
+}
+
+.afterHr{
+	margin-top: 1px;
+	float: right;
+	font-size: 10px;
+
+}
+
+.afterHr span{
+	margin-left: 15px;
+}
+
+.afterHr span a{
+	text-decoration: none;
+}
+
+.footerBox{
+	margin-left: 15%;
+	margin-right: 15%;
+}
+
+.shadowInfo{
+	color: gray;
+	font-size: 10px;
+}
+
+#fb-root {float:left;}
+.twitter-share-button, #___plusone_0, .fb-like  {float:left !important;}
+#___plusone_0 { width: 70px !important; }
+.twitter-share-button { width: 85px !important; }
+.beforeHr .fb-like { width: 110px !important; }
+

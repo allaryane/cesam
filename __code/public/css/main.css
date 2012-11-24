@@ -1,0 +1,296 @@
+@charset "utf-8";
+/******************** Entête UTF-8 ******************\
+*
+*	fichier			: public/css/main.css
+*	projet			:
+*	version			: 1.0.1 2012/03/19 10:40 JRA
+*
+\****************************************************/
+
+/*
+	Nav Bar
+*/
+
+.pmuBody{
+	position: relative;
+	min-width: 1200px;
+	max-width: 2500px;
+	width: 100%;
+    height: 100%;
+	margin: 0 auto; 
+	font-size: 11px;
+	font-family: "lucida grande",tahoma,verdana,arial,sans-serif;
+}
+
+#headerCesam{
+	color: graytext;
+	font-size: 20px;
+	font-weight: bold;
+}
+#headerCesam img{
+	height: 100px;
+	padding-left: 1%;
+	margin-top: 5px;
+}
+
+.pmuNavBar{
+	position: relative;
+	margin-bottom: 50px;
+	margin-top: 20px;
+	width: 98%;
+	height: 30px;
+	margin-left: 1%;
+	margin-right: 1%;
+	font-size: 13px;
+}
+
+.headerClass{
+	width: 100%;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+
+.mainBox{
+	background-color: whitesmoke;
+}
+.contentBox{
+	background-color: #F0F0F0;
+	margin-top: 0px;
+	/*height: 800px;*/
+	min-height: 500px;
+}
+
+.centralBox{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #737373;
+	background-color: white;
+	width: 100%;
+	/*height: 780px;*/
+	min-height: 400px;
+	border-radius: 4px;
+}
+
+.centralBoxHeader{
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #737373;
+	background-color: #3BB9FF;
+	width: 100%;
+	height: 20px;
+	vertical-align: middle;
+	text-align: center;
+	color: whitesmoke;
+	font-weight: bold;
+}
+
+
+.leftBoxUserData{
+	border-style: solid;
+	border-width: 1px;
+	border-color: #737373;
+	background-color: white;
+	width: 100%;
+	min-height: 400px;
+	max-height: 780px;
+	border-radius: 4px;
+	margin-left: 2px;
+}
+
+.leftBoxUserDataHeader{
+	
+	border-bottom-style: solid;
+	border-bottom-width: 1px;
+	border-bottom-color: #737373;
+	background-color: #3BB9FF;
+	width: 100%;
+	height: 20px;
+	text-align: center;
+	font-weight: bold;
+	color: whitesmoke;
+}
+
+.boxUserDataContent{
+	width: 96%;
+	margin-left:2%;
+	margin-right: 2%;
+	margin-top: 10px;
+	margin-bottom: 5px;
+	text-align: left;
+}
+
+
+.boxUserDataContent li{
+}
+
+.boxUserDataContent a:hover{
+	text-decoration: none;
+}
+
+.dataUserImgLeft{
+	width: 60px;
+	height: 60px;
+	border-color: #08C;
+	border-width: 1px; 
+	border-style: solid;
+	border-radius: 4px;
+	float: left;
+	margin-right: 10px;
+}
+
+.dataUserImgRight{
+	color: graytext;
+	font-weight: bold;
+}
+
+
+.formClassInput{
+	border-radius: 10px;
+	border-width: 2px;
+	font-size: 13px;
+	width: 200px;
+	margin-left: 10px;
+	background-color: whitesmoke;
+}
+
+#cesamForm{
+	margin-left: 20px;
+	margin-right: 20px;
+}
+
+#cesamForm label{
+	font-size: 12px;
+	color: #585858;
+}
+
+#cesamForm input{
+	border-radius: 10px;
+	border-width: 1px;
+	font-size: 12px;
+	background-color: whitesmoke;
+	height: 13px;
+	color: black;
+}
+
+
+.inputRadiusClass{
+	border-radius: 10px!important;
+	border-width: 1px!important;
+	font-size: 12px!important;
+	background-color: whitesmoke!important;
+	height: 13px!important;
+	color: black!important;
+}
+
+
+
+#cesamForm select:focus{
+	border-color: rgba(82, 168, 236, 0.8);
+	outline: 0;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	-moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6);
+	box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(82, 168, 236, 0.6)!important;
+}
+
+#cesamForm select{
+	border-radius: 13px;
+	font-size: 12px;
+	background-color: whitesmoke;
+	height: 26px;
+	color: black;
+}
+
+#cesamForm textarea{
+	border-radius: 13px;
+	font-size: 12px;
+	background-color: whitesmoke;
+	color: black;
+}
+
+
+#cesamForm .control-group{
+	margin-bottom: 0px!important;
+}
+
+
+#contentFiles{
+	margin-top: 15px;
+	margin-bottom: 15px;
+	margin-left: 10px;
+	margin-right: 10px;
+	font-size: 10px;
+}
+
+.imgFileClass{
+	width: 50px;
+	height: 65px;
+}
+
+.textDivFileClass{
+	line-height: 12px!important;
+	margin-bottom: 3px;
+	margin-left: 2px;
+	margin-right: 2px;
+}
+
+#contentFiles .span1{
+	border-style: solid;
+	border-width: 1px;
+	border-color: graytext;
+	width: 150px;
+	height: 120px;
+	border-radius: 10px!important;
+	margin-top: 20px;
+	margin-left: 0px;
+	margin-right: 20px;
+}
+
+
+.typeFileButton
+{
+	background-color: #3BB9FF!important;
+	border-radius: 20px!important;
+	width:200px!important;
+	height:30px!important;
+	font-size: 13px!important;
+	color: whitesmoke!important;
+}
+
+
+.alternColor1{
+    background-color: #CEF6F5;
+}
+
+
+.alternColor2{
+    background-color: #B9D0D7;
+}
+
+
+.err{
+    color: red!important;
+}
+
+.error404{
+    margin-left: 50px;
+    margin-top: 50px;
+}
+
+.error404 .titleError404{
+    margin-top: 10px;
+    font-size: 25px;
+    font-weight: bold;
+    color: red;
+}
+
+.error404 .contentError404{
+    margin-top: 30px;
+    margin-left: 100px;
+    font-size: 17px;
+    color: black;
+    
+}
+
+.btn{
+	border-radius: 20px!important;
+}

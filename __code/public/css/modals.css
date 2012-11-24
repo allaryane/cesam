@@ -1,0 +1,79 @@
+/* 
+    Document   : modals
+    Created on : 2012-02-27, 16:51:30
+    Author     : jralla
+*/
+
+.contentModal{
+	color:#737373;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	margin-right: 20px;
+}
+
+.modal-body {
+	padding: 0px!important;
+}
+
+.infoModal{
+	border-width: 10px !important;
+	border-style: solid;
+	border-radius: 5px;
+}
+
+
+.infoModal .headerModal{
+	/*background-color: #3BB9FF;*/
+	background: -moz-linear-gradient(top, #3BB9FF, #E0E0E0); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, from(#3BB9FF), to(#E0E0E0)); /* for webkit browsers */
+}
+
+.infoModal .headerModal span{
+	color: whitesmoke;
+	float: left;
+	margin-top: 10px;
+	margin-left: 5px;
+	margin-bottom: 10px;
+	font-family: monospace;
+	font-weight: bold;
+}
+
+
+.infoModal .btn-primary:hover{
+	background-color: #3BB9FF;
+}
+
+.infoModal .btn-primary{
+	background-color: #3BB9FF;
+	color: whitesmoke;
+	background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#3BB9FF), to(#3BB9FF));
+	background-image: -webkit-linear-gradient(top, #3BB9FF, #3BB9FF);
+	background-image: -o-linear-gradient(top, #3BB9FF, #3BB9FF);
+	background-image: linear-gradient(to bottom, #3BB9FF, #3BB9FF);
+	background-image: -moz-linear-gradient(top, #3BB9FF, #3BB9FF);
+	background-repeat: repeat-x;
+}
+
+.modal-header h4{
+    font-size: 20px;
+}
+.modal .subContentTitle{
+    margin-left: 10px;
+    margin-top: 10px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+.modal .subContent{
+    margin-left: 30px;
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+
+
+.modal .control-group{
+    margin-left: 20px;
+    margin-top: 20px;
+}
+

@@ -1,0 +1,199 @@
+/* 
+    Document   : patients.css
+    Created on : 30 oct. 2012, 18:10:49
+    Author     : Ryane Alla
+*/
+
+
+
+#cesamForm{
+	margin-top: 5px;
+}
+
+#stepsAddPatient{
+	margin-left: 15%;
+	margin-right: 10%;
+	width: 75%;
+	margin-top: 20px;
+}
+
+.verticalSpaceAfterLengendForm{
+	height: 5px;
+}
+
+.control-label{
+
+}
+
+.err .error{
+	color: red!important;
+}
+
+
+.lengendForm{
+	margin-top: 0px;
+	padding-top: 0px;
+}
+
+.lengendForm label{
+	margin-left: 20px;
+	font-size: 22px!important;
+	color: graytext;
+}
+
+.subLengendForm{
+	margin-top: 20px;
+}
+
+.reinitButtonClass{
+	float: right;
+	margin-top: 10px;
+	margin-right: 10px;
+}
+
+.recordLabelTitle{
+	text-decoration: underline;
+	margin-top: 20px;
+	margin-bottom: 0px!important;
+}
+
+.recordLabelTitleFirst{
+	text-decoration: underline;
+	margin-bottom: 0px!important;
+}
+
+
+.recordLabelData{
+	font-size: 15px!important;
+	color: #3BB9FF!important;
+	margin-bottom: 0px!important;
+	font-family:cursive!important;
+
+}
+
+.recordDivNotes label{
+	margin-top: 5px;
+	margin-bottom: 5px;
+	margin-left: 5px;
+	margin-right: 5px;
+	color : #3BB9FF!important; 
+	font-family:cursive!important;
+}
+
+.recordDivNotes{
+	margin-top: 5px;
+	border-style: solid;
+	border-width: 1px;
+	border-color: graytext;
+	background-color: whitesmoke;
+	width: 340px;
+	height: 100px;
+	border-radius: 10px;
+}
+
+.specialStyleText{
+	
+	font-family:cursive!important;
+}
+
+.btn{
+	border-radius: 20px!important;
+}
+
+
+.errorValidationServer{
+	margin-left:auto;
+	margin-right:auto;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	width:85%;
+	/*height: 110px;*/
+	border-style: solid;
+	border-width: 1px;
+	border-color: red;
+	background-color: #FFEBE8;
+	/*color: #737373;*/
+	color : black;
+	border-radius: 10px;
+}
+
+.errorValidationServer h1{
+	font-size: 16px;
+	margin: 5px;
+}	
+
+.errorValidationServerContent{	
+	margin-left: 40px;
+}
+
+.divSearch{
+	margin-top: 20px;
+	margin-left: 20px;
+	margin-bottom: 0px;
+}
+
+.divSearch input{
+	position: relative;
+	width: 400px!important;
+	border-radius: 15px;
+}
+
+.searchTitle{
+	margin-left: 5%;
+	margin-right: 5%;
+	margin-top: 20px;
+}
+
+.searchTitle center{
+	color: graytext;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.resultsPatientsTable{
+	margin-left: 2%;
+	margin-right: 2%;
+}
+.table tr{
+	cursor: pointer;
+}
+
+
+.divErrorNoData{
+    margin-top: 50px;
+    font-size: 18px;
+}
+
+
+.divMessagesSucces{
+    margin-left:auto;
+    margin-right:auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width:85%;
+    /*height: 110px;*/
+    border-style: solid;
+    border-width: 1px;
+    border-color: green;
+    background-color: #81F7BE;
+    /*color: #737373;*/
+    color : black;
+    border-radius: 10px;
+}
+
+
+.divMessagesSucces #subContent{
+	margin-left: 20px;
+}
+
+
+
+.divMessagesSucces h1{
+	font-size: 16px;
+	margin: 0px;
+	padding: 0px;
+}
+
+.bigText{
+    font-size: 20px!important;
+}
