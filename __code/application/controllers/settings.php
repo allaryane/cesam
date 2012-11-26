@@ -160,7 +160,7 @@ class Settings extends CI_Controller {
         $vars['ROOT_INFOS_OK'] = $this->session->userdata('ROOT_INFOS_OK');
         $vars['SETTINGS_SYS_OK'] = $this->session->userdata('SETTINGS_SYS_OK');
         
-        $vars['rootInfos'] = $this->user_model->getUserData();
+        $vars['rootInfos'] = $this->user_model->getUserData(1);
         $vars['settingsArray'] = $this->settings_model->getSettings();
         
 

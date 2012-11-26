@@ -15,6 +15,8 @@ class Error extends CI_Controller {
 
     public function __construct() {
         parent::__construct();
+    
+        
     }
 
     public function index() {
@@ -36,9 +38,32 @@ class Error extends CI_Controller {
     }
     
     public function jsDisabled(){
-        echo 'Js desactive';
+        $vars = array();
+        $vars['pageId'] = PAGE_ID_ERROR_JS;
+        $vars['leftBoxData'] = array();
+
+
+        $this->bktemplate->write('title', 'Cesam - Erreur JS', TRUE);
+        $this->bktemplate->write_view('header', '_content/zones/_header', $vars);
+        $this->bktemplate->write_view('content', '_content/error_js', $vars);
+        $this->bktemplate->write_view('footer', '_content/zones/_footer');
+        $this->bktemplate->render();
     }
 
+    public function undefinedError(){
+        $vars = array();
+        $vars['pageId'] = PAGE_ID_ERROR_UNDEFINED;
+        $vars['leftBoxData'] = array();
+
+
+        $this->bktemplate->write('title', 'Cesam - Erreur inconnue', TRUE);
+        $this->bktemplate->write_view('header', '_content/zones/_header', $vars);
+        $this->bktemplate->write_view('content', '_content/error_undefined', $vars);
+        $this->bktemplate->write_view('footer', '_content/zones/_footer');
+        $this->bktemplate->render();
+    }
+    
+    
 }
 
 ?>

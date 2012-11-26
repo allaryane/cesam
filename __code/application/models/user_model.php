@@ -42,18 +42,12 @@ class User_model extends CI_Model {
      * Permet de recuperer tous les champs du user dont le id est passe en argument
      * return :
      */
-    public function getUserData($idUser = 1, $is_doctor=false){
+    public function getUserData($idUser){
         $query = $this->db->select('*')
-        ->from($this->table_user);
-        
-        if($is_doctor){
-            $query = $query->where('id', $idUser)
-                     ->where('active', 1);
-            $query = $query->where('type' , USER_TYPE_DOCTOR);
-        }
-        else $query = $query->where('type' , USER_TYPE_ROOT);
-            
-        $query = $query->get();
+        ->from($this->table_user)
+        ->where('id', $idUser)
+        ->where('active', 1)
+        ->get();
         $array_objects_results = $query->result();
         return (!empty($array_objects_results)) ? ((count($array_objects_results) == 1) ? $array_objects_results[0] : $array_objects_results) : array();
     }
@@ -123,18 +117,18 @@ class User_model extends CI_Model {
 	 * Verifie si les donnees d'authentification sont correctes
 	 * return : int. idUser donnees corrects - 0 dans le cas contraire
 	 */
-	public function isLoginOk($username , $password){
-            $query = $this->db->select('*')
-            ->from($this->table_user)
-            ->where('username', $username)
-            ->where('password', $password)
-            ->get();	
-            if ($query->num_rows() > 0) {
-                    $row = $query->row();
-                    return $row->id; 
-            }
-            else return 0;
-	}
+    public function isLoginOk($username , $password){
+        $query = $this->db->select('*')
+        ->from($this->table_user)
+        ->where('username', $username)
+        ->where('password', $password)
+        ->get();	
+        if ($query->num_rows() > 0) {
+                $row = $query->row();
+                return $row->id; 
+        }
+        else return 0;
+    }
 	
 	
 	/*

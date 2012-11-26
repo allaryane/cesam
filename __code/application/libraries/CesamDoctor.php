@@ -64,7 +64,7 @@ class CesamDoctor {
         $CI = & get_instance();
         $CI->load->model(array('patient_model','user_model'));
         // Objet contenant les informations sur le docteur
-        $infosDoctorObj = $CI->user_model->getUserData($idDoctor, true);
+        $infosDoctorObj = $CI->user_model->getUserData($idDoctor);
         if(empty($infosDoctorObj)) return array();
         
         $arrayPatients = $CI->patient_model->getAllActivePatientsByDoctorId($idDoctor);
@@ -78,7 +78,7 @@ class CesamDoctor {
 
         $CI->form_validation->set_rules('doctorLastName', 'Nom', 'required');
         $CI->form_validation->set_rules('doctorFirstName', 'Prénom(s)', 'required');
-        $CI->form_validation->set_rules('code_permanent', 'Code permanent', 'required');
+        $CI->form_validation->set_rules('code_permanent', 'Code permanent', 'required|callback_codePermanent_check');
         $CI->form_validation->set_rules('password', 'Mot de passe', 'required');
         $CI->form_validation->set_rules('email', 'Adresse email', 'valid_email');
         $CI->form_validation->set_rules('telCell', 'N° de Tel ou Cell', 'callback_telCell_check');

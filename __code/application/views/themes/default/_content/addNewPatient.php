@@ -15,13 +15,6 @@
 	</div>
 	
 	<div class="reinitButtonClass">
-            <?php 
-                if(strtoupper($this->history->end()) == PAGE_ID_PATIENTS){
-            ?>
-                <button class="btn" onclick="window.location = '<?php echo base_url().'patients'; ?>';" type="button">Revenir à la liste des patients</button>  
-            <?php
-                } 
-            ?>
 		<button class="btn" onclick="location.reload();" type="button">Réinitialiser le formulaire</button>
 	</div>
 	<div style="clear: both;"></div>

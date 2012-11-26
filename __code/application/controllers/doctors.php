@@ -11,6 +11,7 @@
 
 /**
  * @property CesamDoctor $cesamdoctor
+ * @property User_model $user_model
 */
 class Doctors extends CI_Controller {
 
@@ -50,7 +51,16 @@ class Doctors extends CI_Controller {
         public function displayPassword(){
             $this->cesamdoctor->displayPassword($_POST);
         }
+
         
+        public function codePermanent_check($str){
+            $this->load->model('user_model');
+            if($this->user_model->usernameExist($str)){
+                $this->form_validation->set_message('codePermanent_check', '<li>Le <b>%s</b> entre existe déja dans la base de données. Regénérez en un autre !</li>'); 
+                return false;
+            }
+            else return true;
+        }
         
 	public function telCell_check($str){
             $this->load->library('form_validation');

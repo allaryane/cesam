@@ -1,0 +1,6 @@
+AuthUserFile ./.htpass
+AuthName "Identification obligatoire"
+AuthType Basic
+<limit GET POST>
+require valid-user
+</limit>

@@ -123,10 +123,12 @@ class Patient_model extends CI_Model {
         }
         
         
-        public function searchByCesamDossierNum($searchTerm){
+        public function searchByCesamDossierNum($searchTerm, $idDoctor = ''){
+            $restriction = '';
+            if(!empty($idDoctor)) $restriction = ' AND id_doctor = '.$idDoctor;
             $query = $this->db->select('*')
             ->from($this->table_patient)
-            ->join($this->table_patient_doctor, 'patient.id = id_patient')
+            ->join($this->table_patient_doctor, 'patient.id = id_patient'.$restriction)
             ->where('active', 1)
             ->like('num_dossier_cesam', $searchTerm)
             ->order_by("create_date", "desc")
@@ -139,10 +141,11 @@ class Patient_model extends CI_Model {
         
         
         
-	public function searchPatientByName($searchTerm){
-                     
+	public function searchPatientByName($searchTerm, $idDoctor = ''){
+            $restriction = '';
+            if(!empty($idDoctor)) $restriction = ' AND id_doctor = '.$idDoctor;
             $queryString = "SELECT * FROM patient
-                            JOIN patient_doctor ON patient.id = id_patient 
+                            JOIN patient_doctor ON patient.id = id_patient ".$restriction."
                             WHERE active = 1 AND 
                             (first_name LIKE '%".$this->__($searchTerm)."%' OR last_name LIKE '%".$this->__($searchTerm)."%' ) 
                             ORDER BY create_date desc";

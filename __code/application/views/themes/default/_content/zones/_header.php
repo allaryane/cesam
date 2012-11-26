@@ -1,7 +1,7 @@
 <?php
-/*
 
- */
+$userdata = $this->session->userdata('userLoginData');
+
 ?>
 
 <div  class="container-fluid">
@@ -9,9 +9,11 @@
 		<img  src="<?php echo base_url(); ?>public/images/microscope.png" />
 		Laboratoire CE.S.A.M
 	</div>
-	
+	<?php
+        if($userdata->type == USER_TYPE_ROOT){
+        ?>
 	<div class="row-fluid">
-    <div>
+        <div>
 		<!--Header bar-->
 		<div class="pmuNavBar">
 			<div class="navbar">
@@ -73,4 +75,39 @@
 		</div>
     </div>
   </div>
+
+        <?php
+        }
+        else{
+        ?>
+        <div class="row-fluid">
+        <div>
+                <!--Header bar-->
+                <div class="pmuNavBar">
+                        <div class="navbar">
+                                <div class="navbar-inner">
+                                <a class="brand" href="<?php echo base_url(); ?>mypatients"><font color="#3BB9FF"><b>Cesam</b></font></a>
+                
+                                <form method="post" action="<?php echo base_url(); ?>mypatients" class="navbar-search pull-right divSearch">                         
+                                    <input type="text" name="searchTerm" value="<?php echo @$searchTerm; ?>" placeholder="Rechercher un patient selon une catégorie"/>
+                                    <?php
+                                    $options = array(SEARCH_BY_NAME => 'Nom et/ou Prénom(s)',
+                                                     SEARCH_BY_CESAM_DOSSIER_NUM => 'N° dossier Cesam');
+                                    
+                                    Cesam_form_helper::makeSelectField('category', '', @$category, $options);
+                                    ?>
+                                </form>
+                        </div>
+                        </div>
+                </div>
+        </div>
+        </div>
+
+    
+    
+    
+    
+        <?php
+        }
+        ?>
 </div>

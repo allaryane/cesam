@@ -42,6 +42,7 @@ $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 $route['login/connect'] = 'login/connect';
 $route['patients'] = 'patients';
+$route['mypatients'] = 'mypatients';
 $route['patients/recordPatient/:num'] = 'patients/recordPatient/$1';
 
 $route['doctors'] = 'doctors';
@@ -49,7 +50,6 @@ $route['settings'] = 'settings';
 $route['notifications'] = 'notifications';
 $route['faq'] = 'faq';
 $route['404_override'] = 'error/error_404';
-
 
 
 /* End of file routes.php */

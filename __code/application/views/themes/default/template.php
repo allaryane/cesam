@@ -9,6 +9,16 @@
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 	<head>
+                <?php 
+                if($pageId != PAGE_ID_ERROR_JS){
+                ?>
+                <noscript>
+                    <meta http-equiv="refresh" content="0;URL=<?php echo base_url().'error/jsDisabled' ?>" />
+                </noscript> 
+                <?php
+                }
+                ?>
+                
 		<title><?php echo $title; ?></title>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8" />
 		<meta name="site_url" content="<?php echo base_url(); ?>" />
@@ -51,8 +61,9 @@
 				echo Bktemplate_helper::render_partial('_content/zones/_left_box', $leftBoxData);
 				?>
 			</div>
-
-			<div class="span9">
+                        
+                        
+                        <div class="span9">
 				<!--Body content-->	  
 				<div id="content" class="contentBox">		
 					<?php
@@ -63,7 +74,7 @@
 			</div>
 
 
-			</div>
+		</div>
 		</div>
 	
 		<?php

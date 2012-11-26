@@ -69,14 +69,7 @@ if(!empty($recordData)){
         ?>
 
 	<div class="reinitButtonClass">
-            <?php 
-                
-                if(strtoupper($this->history->end()) == PAGE_ID_DOCTORS){
-            ?>
-                   <button class="btn" onclick="window.location = '<?php echo base_url().'doctors'; ?>';" type="button">Revenir à la liste des médecins</button>  
-            <?php
-                } 
-            ?>
+            
             <button class="btn" onclick="window.location = '<?php echo base_url().'doctors/modifyDoctor/'.$infosDoctorObj->id; ?>';" type="button"><b>Modifier la fiche médecin</b></button>
             <button class="btn" onclick="alert('Supprimer');" type="button">Supprimer la fiche médecin</button>
 

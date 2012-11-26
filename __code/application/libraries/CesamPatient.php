@@ -26,17 +26,22 @@ class CesamPatient {
         $CI->load->model(array('patient_model'));
         $searchTerm = $dataPost['searchTerm'];
         $category = $dataPost['category'];
-        
+        $CI->load->library(array('session'));
+        $userdata = $CI->session->userdata('userLoginData');
+        $idDoctor = '';
+        if($userdata->type == USER_TYPE_DOCTOR) $idDoctor = $userdata->id; 
         switch ($category) {
             case SEARCH_BY_NAME:
-                return $CI->patient_model->searchPatientByName($searchTerm);
+                return $CI->patient_model->searchPatientByName($searchTerm, $idDoctor);
                 break;
             
-            case SEARCH_BY_CESAM_DOSSIER_NUM:
-                return $CI->patient_model->searchByCesamDossierNum($searchTerm);
+            case SEARCH_BY_CESAM_DOSSIER_NUM:     
+                return $CI->patient_model->searchByCesamDossierNum($searchTerm, $idDoctor);
                 break;
 
             case SEARCH_BY_DOCTOR_NAME:
+                if($userdata->type == USER_TYPE_DOCTOR) return array();
+                
                 $doctors = $CI->user_model->searchDoctorByName($searchTerm);
                 if(!empty($doctors)){
                     $doctorIdList = array();
@@ -75,16 +80,29 @@ class CesamPatient {
     public function getPatientsDashData(){
         $CI = & get_instance();
         $CI->load->model(array('patient_model','file_model'));
-        $allPatients = $this->getPatientsList();
-        $dataDashPatient['allPatientsData'] = $allPatients;
-        $dataDashPatient['nbPatients'] = count($allPatients);
-        $dataDashPatient['nbFiles'] = count($CI->file_model->getAllActiveFiles());
+        $CI->load->library(array('session'));
+        $userdata = $CI->session->userdata('userLoginData');
+        
+        if($userdata->type == USER_TYPE_DOCTOR){
+            $allPatients = $CI->patient_model->getAllActivePatientsByDoctorId($userdata->id);
+            $dataDashPatient['allPatientsData'] = $allPatients;
+            $dataDashPatient['nbPatients'] = count($allPatients);
+        }
+        else{
+            $allPatients = $this->getPatientsList();
+            $dataDashPatient['allPatientsData'] = $allPatients;
+            $dataDashPatient['nbPatients'] = count($allPatients);
+            $dataDashPatient['nbFiles'] = count($CI->file_model->getAllActiveFiles());
+        }        
         return $dataDashPatient;
     }
     
     public function getPatientRecordData($idPatient){
         $CI = & get_instance();
         $CI->load->model(array('patient_model','file_model','user_model'));
+        $CI->load->library(array('session'));
+        $userdata = $CI->session->userdata('userLoginData');
+        
         // Objet contenant les informations sur le patient
         $infosPatientObj = $CI->patient_model->getActivePatientData($idPatient);
         if(empty($infosPatientObj)) return array();
@@ -92,7 +110,12 @@ class CesamPatient {
         //  [idFile1] => objetDateFile1,[idFile2] => objetDateFile2
         $arrayFiles = $CI->file_model->getAllPatientActiveFiles($idPatient);
         $doctorId = $CI->patient_model->getPatientDoctorId($idPatient);
-        $userObj = $CI->user_model->getUserData($doctorId, true);
+        
+        if($userdata->type == USER_TYPE_DOCTOR){
+            if($doctorId != $userdata->id) return array();
+        }
+        
+        $userObj = $CI->user_model->getUserData($doctorId);
         if(empty($userObj)) $doctorName = ''; 
         else $doctorName = $userObj->last_name.' '.$userObj->first_name; 
         $recordData = array('infosPatientObj' => $infosPatientObj,

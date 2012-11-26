@@ -17,6 +17,9 @@ if(!empty($recordData)){
         $doctorName = $recordData['doctorName'];
         $doctorId = $recordData['doctorId'];
 }
+$userdata = $this->session->userdata('userLoginData');
+$controllerPatient = 'patients';
+if($userdata->type == USER_TYPE_DOCTOR) $controllerPatient = 'mypatients';
 ?>
 
 
@@ -36,7 +39,7 @@ if(!empty($recordData)){
             <br/>
             <br/>
             <img width="25" height="25" src="<?php echo base_url(); ?>public/images/return.png">
-            <a style="font-size: 15px!important;" href="<?php echo base_url().'patients' ?>">Revenir à la liste des patients</a>
+            <a style="font-size: 15px!important;" href="<?php echo base_url().$controllerPatient ?>">Revenir à la liste des patients</a>
         </center>
         </div>
         
@@ -68,21 +71,21 @@ if(!empty($recordData)){
         <?php
         }
         ?>
-
+        
+        <?php
+        if($userdata->type == USER_TYPE_ROOT){
+        ?>
 	<div class="reinitButtonClass">
-            <?php 
-                if(strtoupper($this->history->end()) == PAGE_ID_PATIENTS){
-            ?>
-                   <button class="btn" onclick="window.location = '<?php echo base_url().'patients'; ?>';" type="button">Revenir à la liste des patients</button>  
-            <?php
-                } 
-            ?>
+          
             <button class="btn" onclick="window.location = '<?php echo base_url().'patients/modifyPatient/'.$infosPatientObj->id; ?>';" type="button"><b>Modifier la fiche patient</b></button>
             <button class="btn" onclick="alert($('#countFiles').val());" type="button">Supprimer la fiche patient</button>
 
 	</div>
 	<div style="clear: both;"></div>	
-	
+	<?php
+        }
+        else echo '<br/><br/>';
+        ?>
 	<form enctype="multipart/form-data" id="cesamForm" class="form-vertical"  method="post" action="">
 		<legend style="margin-bottom: 2px!important;" class="lengendForm"><label>Informations Patient</label></legend>
                 <label style="float: right; font-style: italic;">Ajouté le : <?php echo Cesam_date_format_helper::sqlFormatToCesam($infosPatientObj->create_date); ?></label>

@@ -40,21 +40,27 @@ define('FOPEN_READ_WRITE_CREATE_STRICT',		'x+b');
 define('USER_TYPE_ROOT', 'ROOT');
 define('USER_TYPE_DOCTOR', 'DOCTOR');
 
-define('ERROR_URL', 'error');
+define('ERROR_UNDEFINED', 'error/undefinedError');
 
 /************* PAGE ID **************/
 define('PAGE_ID_DASHBOARD', 'DASHBOARD');
 define('PAGE_ID_DOCTORS', 'DOCTORS');
 define('PAGE_ID_PATIENTS', 'PATIENTS');
+define('PAGE_ID_MYPATIENTS', 'PAGE_ID_MYPATIENTS');
 define('PAGE_ID_SETTINGS', 'SETTINGS');
 define('PAGE_ID_CONNEXION_LOG', 'CONNEXION_LOG');
 define('PAGE_ID_FAQ', 'FAQ');
 define('PAGE_ID_ERROR_404', 'ERROR_404');
+define('PAGE_ID_ERROR_JS', 'PAGE_ID_ERROR_JS');
+define('PAGE_ID_ERROR_UNDEFINED', 'PAGE_ID_ERROR_UNDEFINED');
+
 
 /*************************************/
 /***************LOGIN *****************/
 define('LOGIN', 'LOGIN');
-define('LOGIN_OK_URL', 'dashboard');
+define('LOGIN_OK_ROOT_URL', 'dashboard');
+define('LOGIN_OK_DOCTOR_URL', 'mypatients');
+
 define('LOGIN_FAILED_URL', 'welcome');
 
 define('LOGOUT', 'LOGOUT');
